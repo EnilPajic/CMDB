@@ -12,8 +12,9 @@
 */
 
 Route::get('/', function () {
-    Auth::loginUsingId(1);
-    return 'KONACNO';
+
+    echo 'hello';
+
 });
 
 Route::get('hello/{id?}', 'HelloController@hello');
@@ -25,6 +26,9 @@ Route::get('film/zanr/{id?}', 'FilmController@DajFilmByZanr');
 Route::get('film/vrsta/{id?}', 'FilmController@DajFilmByVrsta');
 Route::post('film/dodaj', 'FilmController@DodajFilm');
 Route::delete('film/delete/{id}', 'FilmController@IzbrisiFilm');
+
+Route::post('login', 'UserController@login');
+Route::resource('users', 'UserController');
 
 Route::group(['middleware' => ['web']], function () {
     Route::get('auth/login', 'Auth\AuthController@getLogin');
