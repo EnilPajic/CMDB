@@ -37,18 +37,18 @@ class UserController extends Controller
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
 
-        // u odgovoru se vraca token
+
         return response()->json(compact('token'));
     }
 
-    //registracija korisnika
+
     public function store(Request $request)
     {
         try
         {
             $korisnik=new User();
 
-            //validacija za polja kod registracije
+
             $rules=array(
                 'name'=>'required|max:32',
                 'email'=>'required|email|max:255|unique:users',
@@ -57,7 +57,7 @@ class UserController extends Controller
 
             $validator= Validator::make(Input::all(), $rules);
 
-            //ako su polja validna, spremi korisnika u bazu i posalji mail za verikikaciju
+
             if(!$validator->fails()) {
 
                 $data = Input::except('password');
@@ -67,7 +67,7 @@ class UserController extends Controller
 
             }
             else{
-                //POST zahtjev nepotpun ili polja nisu prosla validaciju
+
                 return response()->json(['error' => 'Validation failed'], HttpResponse::HTTP_UNAUTHORIZED);
             }
 
@@ -75,10 +75,10 @@ class UserController extends Controller
             return response()->json(['error' => 'Unable to register user'], HttpResponse::HTTP_CONFLICT);
         }
 
-        //registracija uspjesna, kreiraj token za korisnika
+
         $token = JWTAuth::fromUser($korisnik);
 
-        //vrati JWT
+
         return response()->json(compact('token'));
 
     }

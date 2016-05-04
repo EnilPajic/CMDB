@@ -14,7 +14,7 @@ class HelloController extends Controller
 		}
 	public function index()
 		{
-			//Index fajl za prikaz knjiga
+
 			return 'Ovo je index fajl Autora';
 		}
     
