@@ -17,6 +17,21 @@ class FilmController extends Controller
 				return "{\"status\":\"NotOK\", \"message\":\"Nema filma sa tim IDom\"}";
 			return "{\"status\":\"OK\",\n\"Data\":" . json_encode ($film) . "}";
 		}
+    public function PostaviFilm($id = -1)
+    {
+        if ($id === -1)
+            return "{\"status\":\"NotOK\", \"message\":\"Nije proslijeđen ID\"}";
+        $film = new \App\Film();
+        $film->naziv="IRFAAAAAAAAAAAAAN";
+        $film->broj_pracenja=123;
+        $film->ocjena_filma=0;
+        $film->Vrsta_filma="NE RADI, LARAVEL, glupi laravel, najgluplji laraveliiiii";
+        $film->Zanr_filma="konjski laravel";
+        $film->slika="neka slika na logo glupog laravela";
+        $film->ListaID=1;
+        $film->save();
+        return "{\"status\":\"OK\",\n\"Data\":" .".....OKI,,,,, DODAN". "}";
+    }
 	public function DajSveFilmove()
 	{
 		$film = \App\Film::all();

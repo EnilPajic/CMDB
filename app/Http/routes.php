@@ -13,17 +13,19 @@
 
 Route::get('/', function () {
 
-    echo 'hello';
+    return View::make('index');
 
 });
 
 Route::get('hello/{id?}', 'HelloController@hello');
 
 Route::get('film/id/{id?}', 'FilmController@DajFilm');
+Route::get('film/dodaj/{id?}', 'FilmController@PostaviFilm');
 Route::get('film/svi', 'FilmController@DajSveFilmove');
 Route::get('film/ocjena/{id?}', 'FilmController@DajFilmByOcjena');
 Route::get('film/zanr/{id?}', 'FilmController@DajFilmByZanr');
 Route::get('film/vrsta/{id?}', 'FilmController@DajFilmByVrsta');
+Route::get('dashboard', 'UserController@Wellcome');
 Route::post('film/dodaj', 'FilmController@DodajFilm');
 Route::delete('film/delete/{id}', 'FilmController@IzbrisiFilm');
 
@@ -38,8 +40,23 @@ Route::group(['middleware' => ['web']], function () {
 // Registration routes...
     Route::get('auth/register', 'Auth\AuthController@getRegister');
     Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+    Route::get('password/email', 'Auth\PasswordController@getEmail');
+    Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// Password reset routes...
+    Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+    Route::post('password/reset', 'Auth\PasswordController@postReset');
+
+    Route::get('idx', ['middleware' => 'auth.basic', function() {
+        // Only authenticated users may enter...
+    }]);
 });
 
+Route::controllers ([
+    'auth'=> 'Auth\AuthController',
+    'password'=>'Auth\PasswordController',
+]);
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -54,3 +71,5 @@ Route::group(['middleware' => ['web']], function () {
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+Route::auth();

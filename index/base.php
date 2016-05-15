@@ -8,7 +8,7 @@
 function Greska ($s, $e = false)
 {
     /*
-    header("Refresh:0; url=index.php");
+    header("Refresh:0; url=index-edin.php");
     echo '<script language="javascript">';
     echo 'alert("'.$s.'")';
     echo '</script>';

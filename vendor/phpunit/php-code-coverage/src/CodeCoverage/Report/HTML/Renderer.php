@@ -210,7 +210,7 @@ abstract class PHP_CodeCoverage_Report_HTML_Renderer
         );
 
         if ($node instanceof PHP_CodeCoverage_Report_Node_Directory) {
-            $buffer .= '        <li>(<a href="dashboard.html">Dashboard</a>)</li>' . "\n";
+            $buffer .= '        <li>(<a href="dashboard.blade.php">Dashboard</a>)</li>' . "\n";
         }
 
         return $buffer;

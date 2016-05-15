@@ -325,6 +325,13 @@ class RequestTest extends \PHPUnit_Framework_TestCase
         }
     }
 
+    public function testGetFormatWithCustomMimeType()
+    {
+        $request = new Request();
+        $request->setFormat('custom', 'application/vnd.foo.api;myversion=2.3');
+        $this->assertEquals('custom', $request->getFormat('application/vnd.foo.api;myversion=2.3'));
+    }
+
     public function getFormatToMimeTypeMapProvider()
     {
         return array(
@@ -344,25 +351,25 @@ class RequestTest extends \PHPUnit_Framework_TestCase
         $server = array();
 
         // Standard Request on non default PORT
-        // http://host:8080/index.php/path/info?query=string
+        // http://host:8080/index-edin.php/path/info?query=string
 
         $server['HTTP_HOST'] = 'host:8080';
         $server['SERVER_NAME'] = 'servername';
         $server['SERVER_PORT'] = '8080';
 
         $server['QUERY_STRING'] = 'query=string';
-        $server['REQUEST_URI'] = '/index.php/path/info?query=string';
-        $server['SCRIPT_NAME'] = '/index.php';
+        $server['REQUEST_URI'] = '/index-edin.php/path/info?query=string';
+        $server['SCRIPT_NAME'] = '/index-edin.php';
         $server['PATH_INFO'] = '/path/info';
-        $server['PATH_TRANSLATED'] = 'redirect:/index.php/path/info';
+        $server['PATH_TRANSLATED'] = 'redirect:/index-edin.php/path/info';
         $server['PHP_SELF'] = '/index_dev.php/path/info';
-        $server['SCRIPT_FILENAME'] = '/some/where/index.php';
+        $server['SCRIPT_FILENAME'] = '/some/where/index-edin.php';
 
         $request = new Request();
 
         $request->initialize(array(), array(), array(), array(), array(), $server);
 
-        $this->assertEquals('http://host:8080/index.php/path/info?query=string', $request->getUri(), '->getUri() with non default port');
+        $this->assertEquals('http://host:8080/index-edin.php/path/info?query=string', $request->getUri(), '->getUri() with non default port');
 
         // Use std port number
         $server['HTTP_HOST'] = 'host';
@@ -371,7 +378,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
 
         $request->initialize(array(), array(), array(), array(), array(), $server);
 
-        $this->assertEquals('http://host/index.php/path/info?query=string', $request->getUri(), '->getUri() with default port');
+        $this->assertEquals('http://host/index-edin.php/path/info?query=string', $request->getUri(), '->getUri() with default port');
 
         // Without HOST HEADER
         unset($server['HTTP_HOST']);
@@ -380,11 +387,11 @@ class RequestTest extends \PHPUnit_Framework_TestCase
 
         $request->initialize(array(), array(), array(), array(), array(), $server);
 
-        $this->assertEquals('http://servername/index.php/path/info?query=string', $request->getUri(), '->getUri() with default port without HOST_HEADER');
+        $this->assertEquals('http://servername/index-edin.php/path/info?query=string', $request->getUri(), '->getUri() with default port without HOST_HEADER');
 
-        // Request with URL REWRITING (hide index.php)
+        // Request with URL REWRITING (hide index-edin.php)
         //   RewriteCond %{REQUEST_FILENAME} !-f
-        //   RewriteRule ^(.*)$ index.php [QSA,L]
+        //   RewriteRule ^(.*)$ index-edin.php [QSA,L]
         // http://host:8080/path/info?query=string
         $server = array();
         $server['HTTP_HOST'] = 'host:8080';
@@ -393,12 +400,12 @@ class RequestTest extends \PHPUnit_Framework_TestCase
 
         $server['REDIRECT_QUERY_STRING'] = 'query=string';
         $server['REDIRECT_URL'] = '/path/info';
-        $server['SCRIPT_NAME'] = '/index.php';
+        $server['SCRIPT_NAME'] = '/index-edin.php';
         $server['QUERY_STRING'] = 'query=string';
         $server['REQUEST_URI'] = '/path/info?toto=test&1=1';
-        $server['SCRIPT_NAME'] = '/index.php';
-        $server['PHP_SELF'] = '/index.php';
-        $server['SCRIPT_FILENAME'] = '/some/where/index.php';
+        $server['SCRIPT_NAME'] = '/index-edin.php';
+        $server['PHP_SELF'] = '/index-edin.php';
+        $server['SCRIPT_FILENAME'] = '/some/where/index-edin.php';
 
         $request->initialize(array(), array(), array(), array(), array(), $server);
         $this->assertEquals('http://host:8080/path/info?query=string', $request->getUri(), '->getUri() with rewrite');
@@ -431,7 +438,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
             'QUERY_STRING' => 'query=string',
             'REQUEST_URI' => '/ba%20se/index_dev.php/foo%20bar/in+fo?query=string',
             'SCRIPT_NAME' => '/ba se/index_dev.php',
-            'PATH_TRANSLATED' => 'redirect:/index.php/foo bar/in+fo',
+            'PATH_TRANSLATED' => 'redirect:/index-edin.php/foo bar/in+fo',
             'PHP_SELF' => '/ba se/index_dev.php/path/info',
             'SCRIPT_FILENAME' => '/some/where/ba se/index_dev.php',
         );
@@ -471,25 +478,25 @@ class RequestTest extends \PHPUnit_Framework_TestCase
         $server = array();
 
         // Standard Request on non default PORT
-        // http://host:8080/index.php/path/info?query=string
+        // http://host:8080/index-edin.php/path/info?query=string
 
         $server['HTTP_HOST'] = 'host:8080';
         $server['SERVER_NAME'] = 'servername';
         $server['SERVER_PORT'] = '8080';
 
         $server['QUERY_STRING'] = 'query=string';
-        $server['REQUEST_URI'] = '/index.php/path/info?query=string';
-        $server['SCRIPT_NAME'] = '/index.php';
+        $server['REQUEST_URI'] = '/index-edin.php/path/info?query=string';
+        $server['SCRIPT_NAME'] = '/index-edin.php';
         $server['PATH_INFO'] = '/path/info';
-        $server['PATH_TRANSLATED'] = 'redirect:/index.php/path/info';
+        $server['PATH_TRANSLATED'] = 'redirect:/index-edin.php/path/info';
         $server['PHP_SELF'] = '/index_dev.php/path/info';
-        $server['SCRIPT_FILENAME'] = '/some/where/index.php';
+        $server['SCRIPT_FILENAME'] = '/some/where/index-edin.php';
 
         $request = new Request();
 
         $request->initialize(array(), array(), array(), array(), array(), $server);
 
-        $this->assertEquals('http://host:8080/index.php/some/path', $request->getUriForPath('/some/path'), '->getUriForPath() with non default port');
+        $this->assertEquals('http://host:8080/index-edin.php/some/path', $request->getUriForPath('/some/path'), '->getUriForPath() with non default port');
 
         // Use std port number
         $server['HTTP_HOST'] = 'host';
@@ -498,7 +505,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
 
         $request->initialize(array(), array(), array(), array(), array(), $server);
 
-        $this->assertEquals('http://host/index.php/some/path', $request->getUriForPath('/some/path'), '->getUriForPath() with default port');
+        $this->assertEquals('http://host/index-edin.php/some/path', $request->getUriForPath('/some/path'), '->getUriForPath() with default port');
 
         // Without HOST HEADER
         unset($server['HTTP_HOST']);
@@ -507,11 +514,11 @@ class RequestTest extends \PHPUnit_Framework_TestCase
 
         $request->initialize(array(), array(), array(), array(), array(), $server);
 
-        $this->assertEquals('http://servername/index.php/some/path', $request->getUriForPath('/some/path'), '->getUriForPath() with default port without HOST_HEADER');
+        $this->assertEquals('http://servername/index-edin.php/some/path', $request->getUriForPath('/some/path'), '->getUriForPath() with default port without HOST_HEADER');
 
-        // Request with URL REWRITING (hide index.php)
+        // Request with URL REWRITING (hide index-edin.php)
         //   RewriteCond %{REQUEST_FILENAME} !-f
-        //   RewriteRule ^(.*)$ index.php [QSA,L]
+        //   RewriteRule ^(.*)$ index-edin.php [QSA,L]
         // http://host:8080/path/info?query=string
         $server = array();
         $server['HTTP_HOST'] = 'host:8080';
@@ -520,12 +527,12 @@ class RequestTest extends \PHPUnit_Framework_TestCase
 
         $server['REDIRECT_QUERY_STRING'] = 'query=string';
         $server['REDIRECT_URL'] = '/path/info';
-        $server['SCRIPT_NAME'] = '/index.php';
+        $server['SCRIPT_NAME'] = '/index-edin.php';
         $server['QUERY_STRING'] = 'query=string';
         $server['REQUEST_URI'] = '/path/info?toto=test&1=1';
-        $server['SCRIPT_NAME'] = '/index.php';
-        $server['PHP_SELF'] = '/index.php';
-        $server['SCRIPT_FILENAME'] = '/some/where/index.php';
+        $server['SCRIPT_NAME'] = '/index-edin.php';
+        $server['PHP_SELF'] = '/index-edin.php';
+        $server['SCRIPT_FILENAME'] = '/some/where/index-edin.php';
 
         $request->initialize(array(), array(), array(), array(), array(), $server);
         $this->assertEquals('http://host:8080/some/path', $request->getUriForPath('/some/path'), '->getUri() with rewrite');
@@ -912,6 +919,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
 
             // invalid forwarded IP is ignored
             array(array('88.88.88.88'), '127.0.0.1', 'unknown,88.88.88.88', array('127.0.0.1')),
+            array(array('88.88.88.88'), '127.0.0.1', '}__test|O:21:&quot;JDatabaseDriverMysqli&quot;:3:{s:2,88.88.88.88', array('127.0.0.1')),
         );
     }
 
@@ -1110,11 +1118,11 @@ class RequestTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('', $request->getScriptName());
 
         $server = array();
-        $server['SCRIPT_NAME'] = '/index.php';
+        $server['SCRIPT_NAME'] = '/index-edin.php';
 
         $request->initialize(array(), array(), array(), array(), array(), $server);
 
-        $this->assertEquals('/index.php', $request->getScriptName());
+        $this->assertEquals('/index-edin.php', $request->getScriptName());
 
         $server = array();
         $server['ORIG_SCRIPT_NAME'] = '/frontend.php';
@@ -1123,11 +1131,11 @@ class RequestTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('/frontend.php', $request->getScriptName());
 
         $server = array();
-        $server['SCRIPT_NAME'] = '/index.php';
+        $server['SCRIPT_NAME'] = '/index-edin.php';
         $server['ORIG_SCRIPT_NAME'] = '/frontend.php';
         $request->initialize(array(), array(), array(), array(), array(), $server);
 
-        $this->assertEquals('/index.php', $request->getScriptName());
+        $this->assertEquals('/index-edin.php', $request->getScriptName());
     }
 
     public function testGetBasePath()
@@ -1136,27 +1144,27 @@ class RequestTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('', $request->getBasePath());
 
         $server = array();
-        $server['SCRIPT_FILENAME'] = '/some/where/index.php';
+        $server['SCRIPT_FILENAME'] = '/some/where/index-edin.php';
         $request->initialize(array(), array(), array(), array(), array(), $server);
         $this->assertEquals('', $request->getBasePath());
 
         $server = array();
-        $server['SCRIPT_FILENAME'] = '/some/where/index.php';
-        $server['SCRIPT_NAME'] = '/index.php';
-        $request->initialize(array(), array(), array(), array(), array(), $server);
-
-        $this->assertEquals('', $request->getBasePath());
-
-        $server = array();
-        $server['SCRIPT_FILENAME'] = '/some/where/index.php';
-        $server['PHP_SELF'] = '/index.php';
+        $server['SCRIPT_FILENAME'] = '/some/where/index-edin.php';
+        $server['SCRIPT_NAME'] = '/index-edin.php';
         $request->initialize(array(), array(), array(), array(), array(), $server);
 
         $this->assertEquals('', $request->getBasePath());
 
         $server = array();
-        $server['SCRIPT_FILENAME'] = '/some/where/index.php';
-        $server['ORIG_SCRIPT_NAME'] = '/index.php';
+        $server['SCRIPT_FILENAME'] = '/some/where/index-edin.php';
+        $server['PHP_SELF'] = '/index-edin.php';
+        $request->initialize(array(), array(), array(), array(), array(), $server);
+
+        $this->assertEquals('', $request->getBasePath());
+
+        $server = array();
+        $server['SCRIPT_FILENAME'] = '/some/where/index-edin.php';
+        $server['ORIG_SCRIPT_NAME'] = '/index-edin.php';
         $request->initialize(array(), array(), array(), array(), array(), $server);
 
         $this->assertEquals('', $request->getBasePath());
@@ -1420,9 +1428,9 @@ class RequestTest extends \PHPUnit_Framework_TestCase
             array(
                 '/fruit/strawberry/1234index.php/blah',
                 array(
-                    'SCRIPT_FILENAME' => 'E:/Sites/cc-new/public_html/fruit/index.php',
-                    'SCRIPT_NAME' => '/fruit/index.php',
-                    'PHP_SELF' => '/fruit/index.php',
+                    'SCRIPT_FILENAME' => 'E:/Sites/cc-new/public_html/fruit/index-edin.php',
+                    'SCRIPT_NAME' => '/fruit/index-edin.php',
+                    'PHP_SELF' => '/fruit/index-edin.php',
                 ),
                 '/fruit',
                 '/strawberry/1234index.php/blah',
@@ -1430,9 +1438,9 @@ class RequestTest extends \PHPUnit_Framework_TestCase
             array(
                 '/fruit/strawberry/1234index.php/blah',
                 array(
-                    'SCRIPT_FILENAME' => 'E:/Sites/cc-new/public_html/index.php',
-                    'SCRIPT_NAME' => '/index.php',
-                    'PHP_SELF' => '/index.php',
+                    'SCRIPT_FILENAME' => 'E:/Sites/cc-new/public_html/index-edin.php',
+                    'SCRIPT_NAME' => '/index-edin.php',
+                    'PHP_SELF' => '/index-edin.php',
                 ),
                 '',
                 '/fruit/strawberry/1234index.php/blah',
@@ -1583,6 +1591,13 @@ class RequestTest extends \PHPUnit_Framework_TestCase
 
         // disabling proxy trusting
         Request::setTrustedProxies(array());
+        $this->assertEquals('3.3.3.3', $request->getClientIp());
+        $this->assertEquals('example.com', $request->getHost());
+        $this->assertEquals(80, $request->getPort());
+        $this->assertFalse($request->isSecure());
+
+        // request is forwarded by a non-trusted proxy
+        Request::setTrustedProxies(array('2.2.2.2'));
         $this->assertEquals('3.3.3.3', $request->getClientIp());
         $this->assertEquals('example.com', $request->getHost());
         $this->assertEquals(80, $request->getPort());
@@ -1809,7 +1824,7 @@ class RequestTest extends \PHPUnit_Framework_TestCase
         $request = Request::create('/');
         $request->headers->set('host', $host);
         $this->assertEquals($host, $request->getHost());
-        $this->assertLessThan(3, microtime(true) - $start);
+        $this->assertLessThan(5, microtime(true) - $start);
     }
 
     /**
