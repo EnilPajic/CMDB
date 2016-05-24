@@ -51,7 +51,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('idx', ['middleware' => 'auth.basic', function() {
         // Only authenticated users may enter...
     }]);
+
 });
+
+Route::get('/welcome', 'HelloController@welcome');
 
 Route::controllers ([
     'auth'=> 'Auth\AuthController',

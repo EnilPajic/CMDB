@@ -156,6 +156,7 @@
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
+
         <div class="col-lg-4">
               <img class="img-circle" src="{{ asset('css/background/Posteri/transformerslogo.jpg') }}" alt="Generic placeholder image" width="140" height="140">
           <h2>Transformers</h2>
@@ -223,6 +224,12 @@
 
       <!-- /END THE FEATURETTES -->
 
+      <div ng-controller="filmoviCtrl">
+
+      <div ng-film-tabela></div>
+
+      </div>
+
 
       <!-- FOOTER -->
       <footer>
@@ -245,6 +252,9 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
     <!--Angular JS and Angular Translate-->
       <script src="{{ asset('js/angular.min.js') }}"></script>
+      <script src="{{ asset('js/ui-bootstrap-custom-tpls-1.3.3.js') }}"></script>
+
+
       <script src="{{ asset('js/angular-translate.min.js') }}"></script>
       <script src="{{ asset('js/app.js') }}"></script>
 

@@ -1,0 +1,23 @@
+<div>
+    <h2>Tabela filmova</h2>
+    <!--<button ng-click="dajFilmoveSve()">testDajFilmove</button>-->
+    <!--<button ng-click="dajStranicu(5,0)">dajStranicu</button>-->
+    <!--<button ng-click="dajStranicu(5,1)">dajStranicu2</button>-->
+    <!--<button ng-click="dajStranicu(10,0)">dajStranicu</button>-->
+    <!--<div ng-repeat="film in filmovi">-->
+        <!--<span>naziv: {{film.naziv}}</span>-<span>ocjena: {{film.ocjena_filma}}</span>-->
+    <!--</div>-->
+    <!--<pre>{{filmoviSvi}}</pre>-->
+    <!--<pre>{{trenutnaStranica}}</pre>-->
+    <table class="table table-striped">
+        <thead>
+        <th>naziv</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="film in filmovi">
+            <td>{{film.naziv}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <uib-pagination total-items="trenutnaStranica.totalItems" ng-model="trenutnaStranica.page" ng-change="pageChanged()"></uib-pagination>
+</div>

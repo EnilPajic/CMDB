@@ -17,5 +17,9 @@ class HelloController extends Controller
 
 			return 'Ovo je index fajl Autora';
 		}
+    public function welcome()
+    {
+        return view('welcome');
+    }
     
 }

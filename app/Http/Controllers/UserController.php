@@ -60,7 +60,9 @@ class UserController extends Controller
             $rules=array(
                 'name'=>'required|max:32',
                 'email'=>'required|email|max:255|unique:users',
-                'password'=>'required|min:6|max:32'
+                'password'=>'required|min:6|max:32',
+                'g-recaptcha-response' => 'required|captcha'
+
             );
 
             $validator= Validator::make(Input::all(), $rules);

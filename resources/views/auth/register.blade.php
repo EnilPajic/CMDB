@@ -10,7 +10,12 @@
         <link rel="icon" href="../../favicon.ico">
 
         <title>Signin Template for Bootstrap</title>
+        <!-- Angular re-Captcha -->
 
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="{{ asset('js/angular.min.js') }}"></script>
+        <script src="{{ asset('js/angular-recaptcha.min.js') }}"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
         <!-- Bootstrap core CSS -->
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/signinImage.css') }}" rel="stylesheet">
@@ -22,7 +27,7 @@
         <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="css/signin.css" rel="stylesheet">
+
 
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
         <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -77,8 +82,9 @@
                       <input type="password" id="password_confirmation" name="password_confirmation" placeholder="" class="form-control input-lg">
                       <p class="help-block">Please confirm password</p>
                     </div>
-                  </div>
 
+                  </div>
+                    {!! app('captcha')->display(); !!}
                   <div class="control-group">
                     <!-- Button -->
                     <div class="controls">
@@ -86,6 +92,12 @@
                     </div>
                   </div>
                 </fieldset>
+
+
+
+
+
+
               </form>
 
             </div>

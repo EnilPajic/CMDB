@@ -27,6 +27,7 @@
     23 => 'App\\Providers\\EventServiceProvider',
     24 => 'App\\Providers\\RouteServiceProvider',
     25 => 'Tymon\\JWTAuth\\Providers\\JWTAuthServiceProvider',
+    26 => 'Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider',
   ),
   'eager' => 
   array (
@@ -44,6 +45,7 @@
     11 => 'App\\Providers\\EventServiceProvider',
     12 => 'App\\Providers\\RouteServiceProvider',
     13 => 'Tymon\\JWTAuth\\Providers\\JWTAuthServiceProvider',
+    14 => 'Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider',
   ),
   'deferred' => 
   array (
