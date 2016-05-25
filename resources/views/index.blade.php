@@ -56,7 +56,7 @@
               <span class="icon-bar"></span>
             </button>
             <!-- Dodao CMDB logo-->
-            <a class="navbar-brand" rel="home" href="#" title="Cloud Movie Database">
+            <a class="navbar-brand" rel="home" href="#" translate="HOME" title="Cloud Movie Database">
               <img style="max-width:50px; margin-top: -15px;"
                    src="{{ asset('css/background/Logo.jpg') }}">
             </a>
@@ -66,8 +66,8 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#about" translate="ABOUT">About</a></li>
+              <li><a href="#contact" translate="CONTACT">Contact</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -159,20 +159,20 @@
 
         <div class="col-lg-4">
               <img class="img-circle" src="{{ asset('css/background/Posteri/transformerslogo.jpg') }}" alt="Generic placeholder image" width="140" height="140">
-          <h2>Transformers</h2>
-          <p>An ancient struggle between two Cybertronian races, the heroic Autobots and the evil Decepticons, comes to Earth, with a clue to the ultimate power held by a teenager.</p>
+          <h2 >Transformers</h2>
+          <p translate="VIEW_MORE1">An ancient struggle between two Cybertronian races, the heroic Autobots and the evil Decepticons, comes to Earth, with a clue to the ultimate power held by a teenager.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="{{ asset('css/background/Posteri/avengerslogo.jpg') }}" alt="Generic placeholder image" width="140" height="140">
           <h2>Avengers</h2>
-          <p>Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity..</p>
+          <p translate="VIEW_MORE2">Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity..</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="{{ asset('css/background/Posteri/Spiderman.jpg') }}" alt="Generic placeholder image" width="140" height="140">
           <h2>Spiderman</h2>
-          <p>When bitten by a genetically modified spider, a nerdy, shy, and awkward high school student gains spider-like abilities that he eventually must use to fight evil as a superhero after tragedy befalls his family.</p>
+          <p translate="VIEW_MORE3">When bitten by a genetically modified spider, a nerdy, shy, and awkward high school student gains spider-like abilities that he eventually must use to fight evil as a superhero after tragedy befalls his family.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
@@ -184,8 +184,8 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading" translate="FEATURETE_HEADER1">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+          <p class="lead" translate="FEATURETE_CONTENT1">The fictional character Batman, a comic book superhero featured in DC Comics publications and created by Bob Kane and Bill Finger, has appeared in various films since his inception. </p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive center-block" src="{{ asset('css/background/Posteri/Batman.jpg') }}" alt="Generic placeholder image">
@@ -196,12 +196,8 @@
 
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Our API is available for everyone to use. A TMDb user account is required to request an API key. Professional users are approved on a per application basis.
-
-                          As always, you must attribute TMDb as the source of your data. Please be sure to read the API FAQ.
-
-                          If you're building a product or service around TMDb, we also recommend joining our Google+ community. It's the best place to learn about API changes, new features and deprecation notices.</p>
+          <h2 class="featurette-heading" translate="FEATURETE_HEADER2">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+          <p class="lead" translate="FEATURETE_CONTENT2">Transformers is a 2007 American science fiction action film based on the Transformers toy line. The film, which combines computer animation with live-action, is directed by Michael Bay, with Steven Spielberg serving as executive producer.</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
           <img class="featurette-image img-responsive center-block" src="{{ asset('css/background/Posteri/transformers.jpg') }}" alt="Generic placeholder image">
@@ -212,8 +208,8 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading" translate="FEATURETE_HEADER3">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+          <p class="lead" translate="FEATURETE_CONTENT3">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive center-block" src="{{ asset('css/background/Posteri/LifeOfPi.jpg') }}" alt="Generic placeholder image">
