@@ -10,6 +10,7 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 use Illuminate\Http\Response as HttpResponse;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
+use Log;
 
 class UserController extends Controller
 {
@@ -31,21 +32,32 @@ class UserController extends Controller
     {
         return User::all();
     }
-
+    public function LogujSe (Request $r)
+    {
+        var_dump ($r);
+        echo "<script>alert ('radi');</script>";
+        return "<h1>Testiram samo</h1>";
+    }
     public function login(Request $request)
     {
+        Log::info ('Pozvao login @user');
         $credentials = $request->only('email', 'password');
-
+        echo "<script>alert ('radi token?');</script>";
         try {
-            if (!$token = JWTAuth::attempt($credentials)) {
+            Log::info ('Pozvao login @user 1111111');
+
+            $token = JWTAuth::attempt($credentials);
+            Log::info ('Pozvao login @user pppppppp');
+            if (!token) {
                 return response()->json(['error' => 'invalid_credentials'], 401);
             }
         } catch (JWTException $e) {
 
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
+        Log::info ('Pozvao login @user 2222222222222');
 
-
+        JWTAuth::setToken ('token');
         return response()->json(compact('token'));
     }
 

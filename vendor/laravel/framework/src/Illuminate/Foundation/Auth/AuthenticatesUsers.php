@@ -56,6 +56,7 @@ trait AuthenticatesUsers
      */
     public function login(Request $request)
     {
+        echo "<script>alert ('5');</script>";
         $this->validateLogin($request);
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle

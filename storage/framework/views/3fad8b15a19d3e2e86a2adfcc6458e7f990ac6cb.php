@@ -36,6 +36,8 @@
         </style>
     </head>
     <body>
+     <?php echo app('captcha')->display();; ?>
+
         <div class="container">
             <div class="content">
                 <div class="title">Laravel 5</div>

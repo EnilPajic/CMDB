@@ -29,12 +29,31 @@ Route::get('dashboard', 'UserController@Wellcome');
 Route::post('film/dodaj', 'FilmController@DodajFilm');
 Route::delete('film/delete/{id}', 'FilmController@IzbrisiFilm');
 
-Route::post('login', 'UserController@login');
+#Route::get('loguj', 'UserController@LogujSe');
 Route::resource('users', 'UserController');
 
+Route::group(['middleware' => ['jwt.auth']], function () {
+
+
+});
 Route::group(['middleware' => ['web']], function () {
-    Route::get('auth/login', 'Auth\AuthController@getLogin');
-    Route::post('auth/login', 'Auth\AuthController@postLogin');
+    Route::post('/dashboard', [
+        'before' => 'jwt-auth',
+        function () {
+            $token = JWTAuth::getToken();
+            $user = JWTAuth::toUser($token);
+
+            return Response::json([
+                'data' => [
+                    'email' => $user->email,
+                    'registered_at' => $user->created_at->toDateTimeString()
+                ]
+            ]);
+        }
+    ]);
+
+    #Route::get('auth/login', 'Auth\AuthController@getLogin');
+    Route::post('login', 'UserController@login');
     Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 // Registration routes...
@@ -75,4 +94,4 @@ Route::group(['middleware' => ['web']], function () {
     //
 });
 
-Route::auth();
+#Route::auth();

@@ -12,6 +12,12 @@ class HelloController extends Controller
 		{
 			return view('hello', array ("id" => $id));
 		}
+	public function LogujSe (Request $r)
+	{
+		var_dump ($r);
+		echo "<script>alert ('radi');</script>";
+		return "<h1>Testiram samo</h1>";
+	}
 	public function index()
 		{
 
