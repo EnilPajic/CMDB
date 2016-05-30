@@ -48,7 +48,7 @@ class UserController extends Controller
 
             $token = JWTAuth::attempt($credentials);
             Log::info ('Pozvao login @user pppppppp');
-            if (!token) {
+            if (!$token) {
                 return response()->json(['error' => 'invalid_credentials'], 401);
             }
         } catch (JWTException $e) {
@@ -57,7 +57,7 @@ class UserController extends Controller
         }
         Log::info ('Pozvao login @user 2222222222222');
 
-        JWTAuth::setToken ('token');
+        //JWTAuth::setToken ('token');
         return response()->json(compact('token'));
     }
 
