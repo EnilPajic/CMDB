@@ -37,8 +37,11 @@ Route::group(['middleware' => ['jwt.auth']], function () {
 
 });
 Route::group(['middleware' => ['web']], function () {
-    Route::post('/dashboard', [
-        'before' => 'jwt-auth',
+    Route::post('/dashboard', function()
+    {
+        return View::make ("dashboard");
+    });
+/*        'before' => 'jwt-auth',
         function () {
             $token = JWTAuth::getToken();
             $user = JWTAuth::toUser($token);
@@ -50,7 +53,7 @@ Route::group(['middleware' => ['web']], function () {
                 ]
             ]);
         }
-    ]);
+    ]);*/
 
     #Route::get('auth/login', 'Auth\AuthController@getLogin');
     Route::post('login', 'UserController@login');

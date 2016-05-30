@@ -10,6 +10,7 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 use Illuminate\Http\Response as HttpResponse;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
+use View;
 use Log;
 
 class UserController extends Controller
@@ -42,10 +43,10 @@ class UserController extends Controller
     {
         Log::info ('Pozvao login @user');
         $credentials = $request->only('email', 'password');
-        echo "<script>alert ('radi token?');</script>";
+        #echo "<script>alert ('radi token?');</script>";
         try {
             Log::info ('Pozvao login @user 1111111');
-
+            #var_dump ($credentials);
             $token = JWTAuth::attempt($credentials);
             Log::info ('Pozvao login @user pppppppp');
             if (!$token) {

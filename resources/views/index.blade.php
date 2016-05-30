@@ -72,16 +72,16 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
 
-              <form  id="register_form" class="navbar-form navbar-right">
+              <form onsubmit="return false;" id="register_form" class="navbar-form navbar-right" method="post" action="/login" ng-controller="loginCTRL">
 
                 <div class="form-group">
-                  <input type="text" placeholder="Email" class="form-control">
+                  <input type="text" name="email" id="main_form_email" placeholder="Email" class="form-control">
                 </div>
                 <div class="form-group">
-                  <input type="password" placeholder="Password" class="form-control">
+                  <input type="password" name="password" id="main_form_pass" placeholder="Password" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-success">Sign in</button>
-                <button id="register" type="submit" class="btn btn-info">Regiser</button>
+                <button type="submit" class="btn btn-success" ng-click="LogujSe();">Sign in</button>
+                <button id="register" onclick="location.href='/auth/register'" class="btn btn-info">Regiser</button>
                   <!--Translate buttons-->
                   <span translate="TITLE">test</span>
                   <button class="btn" ng-click="changeLanguage('bs-Latn-BA')">BA</button>
@@ -155,7 +155,7 @@
     <div class="container marketing">
 
       <!-- Three columns of text below the carousel -->
-      <div class="row">
+      <div class="row" id="mijenjanje">
 
         <div class="col-lg-4">
               <img class="img-circle" src="{{ asset('css/background/Posteri/transformerslogo.jpg') }}" alt="Generic placeholder image" width="140" height="140">
@@ -220,11 +220,6 @@
 
       <!-- /END THE FEATURETTES -->
 
-      <div ng-controller="filmoviCtrl">
-
-      <div ng-film-tabela></div>
-
-      </div>
 
 
       <!-- FOOTER -->

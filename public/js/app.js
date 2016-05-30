@@ -72,7 +72,7 @@ App.controller('translateCtr',function($scope,$translate){
         $scope.jezik = langKey;
     };
 });
-    $(window, document, undefined).ready(function() {
+/*    $(window, document, undefined).ready(function() {
         $("#register").click(function(e) {
 
             $("#RegistrujSe").modal('show');
@@ -84,7 +84,82 @@ App.controller('translateCtr',function($scope,$translate){
 
 
 
-    });
+    });*/
+
+//za kolačiće
+function createCookie(name, value, days) {
+    var expires;
+
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    } else {
+        expires = "";
+    }
+    document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
+}
+
+function readCookie(name) {
+    var nameEQ = encodeURIComponent(name) + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return decodeURIComponent(c.substring(nameEQ.length, c.length));
+    }
+    return null;
+}
+
+function eraseCookie(name) {
+    createCookie(name, "", -1);
+}
+function setCookie(key, value) {
+    var expires = new Date();
+    expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
+    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+}
+App.controller('loginCTRL', ['$scope','$http', function($scope,$http) {
+    $scope.LogujSe = function LogujSe ()
+    {
+        var pass = document.getElementById("main_form_pass");
+        var em = document.getElementById("main_form_email");
+        var FD = new FormData();
+        FD.append ("email", em.value);
+        FD.append ("password", pass.value);
+        $.ajax(
+            {
+
+                url: 'login',
+                type: 'POST',
+                processData: false,
+                contentType: false,
+                data: FD,
+                success: function (r) {
+                    TK = JSON.parse(JSON.stringify(r));
+                    localStorage.setItem('token', TK.token);
+                    var html = $http({method: 'POST', url: '/dashboard', headers: {
+                        'Authorization': 'Bearer ' + TK.token
+                        }
+
+                    }).then (function (resp) {
+                        var m = document.getElementById("mijenjanje");
+                        document.body.innerHTML = resp.data;
+                        //angular.element(document.getElementById('yourControllerElementID')).scope().get();
+                    });
+
+
+                },
+                error: function () {
+                    alert ('iz app.js 3 ERROR');
+                }
+
+            }
+        )
+    };
+
+
+}]);
 
 App.directive('ngFilmTabela',function(){
     //U htmlu se poziva ng-film-tabela
@@ -169,7 +244,6 @@ App.factory('BearerAuthInterceptor', function ($window, $q) {
         request: function(config) {
 
             config.headers = config.headers || {};
-            alert ('zatrazeno: ' + $window.localStorage.getItem('token'));
             if ($window.localStorage.getItem('token')) {
                 // may also use sessionStorage
                 config.headers.Authorization = 'Bearer ' + $window.localStorage.getItem('token');
@@ -189,3 +263,4 @@ App.factory('BearerAuthInterceptor', function ($window, $q) {
 App.config(function ($httpProvider) {
     $httpProvider.interceptors.push('BearerAuthInterceptor');
 });
+

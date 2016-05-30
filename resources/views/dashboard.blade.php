@@ -148,6 +148,19 @@
 
 <hr class="featurette-divider">
 
+<div ng-controller="filmoviCtrl">
+
+    <div ng-film-tabela></div>
+
+</div>
+
+<script src="{{ asset('js/angular.min.js') }}"></script>
+<script src="{{ asset('js/ui-bootstrap-custom-tpls-1.3.3.js') }}"></script>
+
+
+<script src="{{ asset('js/angular-translate.min.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
+
 
 </body>
 </html>
