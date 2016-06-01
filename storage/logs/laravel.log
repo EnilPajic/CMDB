@@ -2540,3 +2540,164 @@ Stack trace:
 [2016-05-30 14:24:37] local.INFO: Pozvao login @user 1111111  
 [2016-05-30 14:24:38] local.INFO: Pozvao login @user pppppppp  
 [2016-05-30 14:24:38] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 08:41:58] local.INFO: SValidator:   
+[2016-06-01 08:43:07] local.INFO: Pozvao login @user  
+[2016-06-01 08:43:07] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 08:43:07] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 08:43:07] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 08:43:29] local.INFO: Pozvao login @user  
+[2016-06-01 08:43:29] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 08:43:29] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 08:43:29] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 08:51:38] local.INFO: Pozvao login @user  
+[2016-06-01 08:51:38] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 08:51:38] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 08:51:38] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 08:52:21] local.INFO: Pozvao login @user  
+[2016-06-01 08:52:21] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 08:52:21] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 08:52:21] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 09:02:10] local.INFO: Pozvao login @user  
+[2016-06-01 09:02:10] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:02:10] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:02:10] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 09:04:59] local.INFO: Pozvao login @user  
+[2016-06-01 09:04:59] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:04:59] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:04:59] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 09:06:18] local.INFO: Pozvao login @user  
+[2016-06-01 09:06:18] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:06:18] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:06:18] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 09:07:20] local.INFO: Pozvao login @user  
+[2016-06-01 09:07:20] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:07:20] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:07:20] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 09:08:50] local.INFO: Pozvao login @user  
+[2016-06-01 09:08:50] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:08:50] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:08:50] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 09:09:35] local.INFO: Pozvao login @user  
+[2016-06-01 09:09:35] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:09:35] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:09:35] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 09:11:00] local.INFO: Pozvao login @user  
+[2016-06-01 09:11:00] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:11:00] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:11:00] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 09:18:48] local.INFO: Pozvao login @user  
+[2016-06-01 09:18:48] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:18:48] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:18:54] local.INFO: Pozvao login @user  
+[2016-06-01 09:18:54] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:18:54] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:23:04] local.INFO: Pozvao login @user  
+[2016-06-01 09:23:04] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:23:04] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:23:04] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 09:23:56] local.INFO: Pozvao login @user  
+[2016-06-01 09:23:56] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:23:56] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:23:56] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 09:26:51] local.INFO: Pozvao login @user  
+[2016-06-01 09:26:51] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:26:51] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:26:59] local.INFO: Pozvao login @user  
+[2016-06-01 09:26:59] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:26:59] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:26:59] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 09:29:14] local.INFO: Pozvao login @user  
+[2016-06-01 09:29:14] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:29:14] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:29:14] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 09:29:59] local.INFO: Pozvao login @user  
+[2016-06-01 09:29:59] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:29:59] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:29:59] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 09:34:05] local.INFO: Pozvao login @user  
+[2016-06-01 09:34:05] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:34:05] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:34:05] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 09:36:08] local.INFO: Pozvao login @user  
+[2016-06-01 09:36:08] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:36:08] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:36:08] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 09:45:51] local.INFO: Pozvao login @user  
+[2016-06-01 09:45:51] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:45:51] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:45:51] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 09:55:30] local.INFO: Pozvao login @user  
+[2016-06-01 09:55:30] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:55:30] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:55:43] local.INFO: Pozvao login @user  
+[2016-06-01 09:55:43] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 09:55:44] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 09:55:44] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 10:11:00] local.INFO: Pozvao login @user  
+[2016-06-01 10:11:00] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 10:11:00] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 10:11:00] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 10:12:57] local.INFO: Pozvao login @user  
+[2016-06-01 10:12:57] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 10:12:57] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 10:12:57] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 10:13:20] local.INFO: Pozvao login @user  
+[2016-06-01 10:13:20] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 10:13:20] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 10:13:20] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 10:15:21] local.INFO: Pozvao login @user  
+[2016-06-01 10:15:21] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 10:15:22] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 10:15:22] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 10:19:09] local.INFO: Pozvao login @user  
+[2016-06-01 10:19:09] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 10:19:09] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 10:19:09] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 10:29:13] local.INFO: Pozvao login @user  
+[2016-06-01 10:29:13] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 10:29:13] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 10:29:13] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 10:29:39] local.INFO: Pozvao login @user  
+[2016-06-01 10:29:39] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 10:29:39] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 10:29:39] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 10:31:08] local.INFO: Pozvao login @user  
+[2016-06-01 10:31:08] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 10:31:08] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 10:31:08] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 11:01:01] local.INFO: Pozvao login @user  
+[2016-06-01 11:01:01] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 11:01:01] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 11:01:01] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 11:45:23] local.INFO: Pozvao login @user  
+[2016-06-01 11:45:23] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 11:45:23] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 11:45:23] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 11:54:12] local.INFO: Pozvao login @user  
+[2016-06-01 11:54:12] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 11:54:12] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 11:54:12] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 11:54:24] local.INFO: Pozvao login @user  
+[2016-06-01 11:54:24] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 11:54:24] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 11:54:24] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 11:54:30] local.INFO: Pozvao login @user  
+[2016-06-01 11:54:30] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 11:54:30] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 11:54:30] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 11:58:27] local.INFO: Pozvao login @user  
+[2016-06-01 11:58:27] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 11:58:28] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 11:58:28] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 11:59:15] local.INFO: Pozvao login @user  
+[2016-06-01 11:59:15] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 11:59:15] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 11:59:15] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 11:59:28] local.INFO: Pozvao login @user  
+[2016-06-01 11:59:28] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 11:59:28] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 11:59:28] local.INFO: Pozvao login @user 2222222222222  
+[2016-06-01 12:00:48] local.INFO: Pozvao login @user  
+[2016-06-01 12:00:48] local.INFO: Pozvao login @user 1111111  
+[2016-06-01 12:00:49] local.INFO: Pozvao login @user pppppppp  
+[2016-06-01 12:00:49] local.INFO: Pozvao login @user 2222222222222  
