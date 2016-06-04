@@ -17,6 +17,19 @@ Route::get('/', function () {
 
 });
 
+Route::get('/about', function () {
+
+    return View::make('about');
+
+});
+
+Route::get('/contact', function () {
+
+    return View::make('contact');
+
+});
+
+
 Route::get('hello/{id?}', 'HelloController@hello');
 
 Route::get('film/id/{id?}', 'FilmController@DajFilm');

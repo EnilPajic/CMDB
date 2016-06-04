@@ -49,25 +49,17 @@
 
           <div class="navbar-header">
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+
             <!-- Dodao CMDB logo-->
-            <a class="navbar-brand" rel="home" href="#" translate="HOME" title="Cloud Movie Database">
-              <img style="max-width:50px; margin-top: -15px;"
-                   src="{{ asset('css/background/Logo.jpg') }}">
-            </a>
-            <a class="navbar-brand" href="#">CMDB</a>
+            <img style="max-width:50px; margin-top: 0px;"
+                               src="{{ asset('css/background/logo.jpg') }}">
           </div>
 
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about" translate="ABOUT">About</a></li>
-              <li><a href="#contact" translate="CONTACT">Contact</a></li>
+              <li><a href="about" translate="ABOUT">About</a></li>
+
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -82,6 +74,7 @@
                 </div>
                 <button type="submit" class="btn btn-success" ng-click="LogujSe();">Sign in</button>
                 <button id="register" onclick="location.href='/auth/register'" class="btn btn-info">Regiser</button>
+                <button id="register" onclick="location.href='/password/email'" class="btn btn-warning">Reset</button>
                   <!--Translate buttons-->
 
                   <button class="btn" ng-click="changeLanguage('bs-Latn-BA')">BA</button>
