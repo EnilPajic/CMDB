@@ -50,14 +50,17 @@ class UserController extends Controller
             $token = JWTAuth::attempt($credentials);
             Log::info ('Pozvao login @user pppppppp');
             if (!$token) {
-                return response()->json(['error' => 'invalid_credentials'], 401);
+                return response()->json(['error' => 'Netacan email ili password'], 401);
             }
         } catch (JWTException $e) {
 
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
         Log::info ('Pozvao login @user 2222222222222');
-
+        $c = $request->only('email');
+        $u = User::where('email', '=', $c)->first();
+        if ($u->banovan)
+            return response()->json(['error' => 'Korisnik je banovan'], 401);
         //JWTAuth::setToken ('token');
         return response()->json(compact('token'));
     }

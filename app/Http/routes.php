@@ -17,19 +17,6 @@ Route::get('/', function () {
 
 });
 
-Route::get('/about', function () {
-
-    return View::make('about');
-
-});
-
-Route::get('/contact', function () {
-
-    return View::make('contact');
-
-});
-
-
 Route::get('hello/{id?}', 'HelloController@hello');
 
 Route::get('film/id/{id?}', 'FilmController@DajFilm');
@@ -88,7 +75,34 @@ Route::group(['middleware' => ['web']], function () {
     }]);
 
 });
-
+Route::get('/admin', function()
+{
+    return View::make ("admin");
+});
+Route::post('/korisnik/banuj', function()
+{
+    $k = intval (\Illuminate\Support\Facades\Input::get("id", "-1"));
+    if ($k == -1)
+        return "{ \"ok\":\"0\", \"msg\":\"Parametar ID nije proslijedjen!\"}";
+    $u = \App\User::find($k);
+    if (!isset ($u) || $u == null)
+        return "{ \"ok\":\"0\", \"msg\":\"Korisnik sa tim ID-om ne postoji!\"}";
+    $u->banovan = true;
+    $u->save();
+    return "{ \"ok\":\"1\", \"msg\":\"OK, banovan\"}";
+});
+Route::post('/korisnik/unbanuj', function()
+{
+    $k = intval (\Illuminate\Support\Facades\Input::get("id", "-1"));
+    if ($k == -1)
+        return "{ \"ok\":\"0\", \"msg\":\"Parametar ID nije proslijedjen!\"}";
+    $u = \App\User::find($k);
+    if (!isset ($u) || $u == null)
+        return "{ \"ok\":\"0\", \"msg\":\"Korisnik sa tim ID-om ne postoji!\"}";
+    $u->banovan = false;
+    $u->save();
+    return "{ \"ok\":\"1\", \"msg\":\"OK, unbanovan\"}";
+});
 Route::get('/welcome', 'HelloController@welcome');
 
 Route::controllers ([
