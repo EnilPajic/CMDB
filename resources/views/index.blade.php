@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="{{asset ('/css/bootstrap-responsive.min.css')}}" rel="stylesheet">
+    <link href="{{asset ('/css/bootstrap.min.css')}}" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
@@ -36,6 +38,7 @@
 <!-- NAVBAR
 ================================================== -->
   <body>
+  <div id="ukloni">
                       <div id="RegistrujSe" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
 
                           <div class="modal-dialog modal-sm">
@@ -49,25 +52,18 @@
 
           <div class="navbar-header">
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+
             <!-- Dodao CMDB logo-->
-            <a class="navbar-brand" rel="home" href="#" translate="HOME" title="Cloud Movie Database">
-              <img style="max-width:50px; margin-top: -15px;"
-                   src="{{ asset('css/background/Logo.jpg') }}">
-            </a>
-            <a class="navbar-brand" href="#">CMDB</a>
+            <img style="max-width:50px; margin-top: 0px;"
+                               src="{{ asset('css/background/logo.jpg') }}">
           </div>
 
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" ng-controller="loginCTRL">
               <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about" translate="ABOUT">About</a></li>
-              <li><a href="#contact" translate="CONTACT">Contact</a></li>
+              <li><a href="about" translate="ABOUT">About</a></li>
+
+
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -82,8 +78,9 @@
                 </div>
                 <button type="submit" class="btn btn-success" ng-click="LogujSe();">Sign in</button>
                 <button id="register" onclick="location.href='/auth/register'" class="btn btn-info">Regiser</button>
+                <button id="register" onclick="location.href='/password/email'" class="btn btn-warning">Reset</button>
                   <!--Translate buttons-->
-                  <span translate="TITLE">test</span>
+
                   <button class="btn" ng-click="changeLanguage('bs-Latn-BA')">BA</button>
                   <button class="btn" ng-click="changeLanguage('en-US')" >ENG</button>
 
@@ -94,8 +91,12 @@
           </div><!--/.nav-collapse -->
         </div>
       </nav>
+    </div>
 
 
+    <div ng-view=""></div>
+
+    <div id="Kontejner_wrappera">
     <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -117,12 +118,10 @@
           </div>
         </div>
         <div class="item">
-          <img class="second-slide" src="{{ asset('css/background/Posteri/transformers.jpg') }}" alt="Second slide">
+          <img class="second-slide" src="{{ asset('css/background/Posteri/avengers.jpg') }}" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+
             </div>
           </div>
         </div>
@@ -130,9 +129,7 @@
           <img class="third-slide" src="{{ asset('css/background/Posteri/hobbit.jpg') }}" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+
             </div>
           </div>
         </div>
@@ -230,24 +227,25 @@
 
     </div><!-- /.container -->
 
+</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <script src="{{ asset('js/holder.min.js') }}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    {{--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>--}}
     <!--Angular JS and Angular Translate-->
       <script src="{{ asset('js/angular.min.js') }}"></script>
+      <script src="{{ asset('js/angular-route.min.js') }}"></script>
       <script src="{{ asset('js/ui-bootstrap-custom-tpls-1.3.3.js') }}"></script>
-
-
       <script src="{{ asset('js/angular-translate.min.js') }}"></script>
       <script src="{{ asset('js/app.js') }}"></script>
+      <script src="{{asset ("/js/general.js")}}"></script>
 
 
 

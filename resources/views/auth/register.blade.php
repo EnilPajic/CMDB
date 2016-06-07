@@ -44,7 +44,7 @@
 
         <div class="container">
 
-          <div class="row">
+          <div class="row col-lg-12">
             <div class="col-md-6">
 
               <form class="form-horizontal" action="register" method="POST">
@@ -86,21 +86,20 @@
                   </div>
                     {!! app('captcha')->display(); !!}
                   <div class="control-group">
+
+                  <hr class="featurette-divider">
                     <!-- Button -->
                     <div class="controls">
-                      <button class="btn btn-success">Register</button>
+                      <button class="btn btn-success col-lg-12">Register</button>
                     </div>
                   </div>
                 </fieldset>
 
-
-
-
-
-
               </form>
 
+
             </div>
+            <img  src="{{ asset('css/background/userImage.png') }}" alt="First slide">
           </div>
 
         </div> <!-- /container -->

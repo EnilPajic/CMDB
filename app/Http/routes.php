@@ -17,6 +17,19 @@ Route::get('/', function () {
 
 });
 
+Route::get('/about', function () {
+
+    return View::make('about');
+
+});
+
+Route::get('/contact', function () {
+
+    return View::make('contact');
+
+});
+
+
 Route::get('hello/{id?}', 'HelloController@hello');
 
 Route::get('film/id/{id?}', 'FilmController@DajFilm');
@@ -34,7 +47,10 @@ Route::resource('users', 'UserController');
 
 Route::group(['middleware' => ['jwt.auth']], function () {
 
-
+    Route::get('/admin', function()
+    {
+        return View::make ("admin");
+    });
 });
 Route::group(['middleware' => ['web']], function () {
     Route::post('/dashboard', function()
@@ -75,10 +91,7 @@ Route::group(['middleware' => ['web']], function () {
     }]);
 
 });
-Route::get('/admin', function()
-{
-    return View::make ("admin");
-});
+
 Route::post('/korisnik/banuj', function()
 {
     $k = intval (\Illuminate\Support\Facades\Input::get("id", "-1"));

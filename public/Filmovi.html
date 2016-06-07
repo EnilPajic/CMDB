@@ -1,5 +1,5 @@
 <div>
-    <h2>Tabela filmova</h2>
+    <h2 style="margin:10px">Tabela filmova</h2>
     <!--<button ng-click="dajFilmoveSve()">testDajFilmove</button>-->
     <!--<button ng-click="dajStranicu(5,0)">dajStranicu</button>-->
     <!--<button ng-click="dajStranicu(5,1)">dajStranicu2</button>-->
@@ -9,15 +9,23 @@
     <!--</div>-->
     <!--<pre>{{filmoviSvi}}</pre>-->
     <!--<pre>{{trenutnaStranica}}</pre>-->
-    <table class="table table-striped">
+    <div style="margin:10px; padding: 10px;;">
+    <table class="table table-striped" >
         <thead>
-        <th>naziv</th>
+        <th>Naziv</th>
+        <th>Link slike</th>
+        <th>Ocjena</th>
+        <th>Kratak opis</th>
         </thead>
         <tbody>
         <tr ng-repeat="film in filmovi">
             <td>{{film.naziv}}</td>
+            <td><a href="{{film.slika}}" onclick="return false;">Link</a></td>
+            <td>{{film.ocjena_filma}}</td>
+            <td>{{film.zanr_filma}}</td>
         </tr>
         </tbody>
     </table>
     <uib-pagination total-items="trenutnaStranica.totalItems" ng-model="trenutnaStranica.page" ng-change="pageChanged()"></uib-pagination>
+    </div>
 </div>

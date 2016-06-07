@@ -74,6 +74,7 @@
                       </div>
                       <button type="submit" class="btn btn-success" ng-click="LogujSe();">Sign in</button>
                       <button id="register" onclick="location.href='/auth/register'" class="btn btn-info">Regiser</button>
+                      <button id="register" onclick="location.href='/password/email'" class="btn btn-warning">Reset</button>
                         <!--Translate buttons-->
 
                         <button class="btn" ng-click="changeLanguage('bs-Latn-BA')">BA</button>
@@ -149,12 +150,12 @@
       <!-- START THE FEATURETTES -->
        <div class="row featurette" >
              <div class="col-md-12">
-                 <h1 class="featurette-heading">What is an IMDB?</h1>
-                  <p class="lead">IMDb is the world's largest collection of movie, TV, and celebrity info. We aim to list every detail about every movie and TV show ever made, including who was in it, who made it, the plot, user ratings, trailers, photos, reviews, quotes, goofs, trivia and much more.</p>
+                 <h1 class="featurette-heading">What is an CMDB?</h1>
+                  <p class="lead">CMDb is the world's largest collection of movie, TV, and celebrity info. We aim to list every detail about every movie and TV show ever made, including who was in it, who made it, the plot, user ratings, trailers, photos, reviews, quotes, goofs, trivia and much more.</p>
                   <hr class="featurette-divider">
-                  <h1 class="featurette-heading">How much is an IMDB Pro account?</h1>
+                  <h1 class="featurette-heading">How much is an CMDB Pro account?</h1>
                   <p class="lead">
-                      IMDbPro subscriptions will increase to $149.99 per year or $19.99 per month, up from the previous pricing of $124.95 per year or $15.95 per month. Customers will be billed the new price starting on April 10, 2014, a rep said.</p>
+                      CMDbPro subscriptions will increase to $149.99 per year or $19.99 per month, up from the previous pricing of $124.95 per year or $15.95 per month. Customers will be billed the new price starting on April 10, 2014, a rep said.</p>
                 <hr class="featurette-divider">
                 </div>
         </div>
